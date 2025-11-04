@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKMC - La fille qui aime chercher l'argent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e4dc 25%, #d4cfc4 50%, #c9c0b3 75%, #a89f91 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, rgba(139, 119, 101, 0.1), rgba(255, 255, 255, 0.3));
+            border-radius: 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(101, 84, 67, 0.15);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #6B5544 0%, #8B7765 25%, #A0826D 50%, #C9B8A8 75%, #3E2723 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            animation: fadeInScale 1.5s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: #5D4E37;
+            font-weight: 300;
+            font-style: italic;
+            margin-top: 15px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content-section {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(249, 246, 243, 0.8), rgba(255, 255, 255, 0.9));
+            padding: 60px 50px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 15px 45px rgba(92, 64, 51, 0.12);
+            border: 1px solid rgba(139, 119, 101, 0.2);
+        }
+
+        .big-text {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: #6B5544;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .medium-text {
+            font-size: clamp(1.8rem, 3vw, 3rem);
+            color: #8B7765;
+            margin: 25px 0;
+            font-weight: 600;
+        }
+
+        .normal-text {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            color: #5C4033;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        .small-text {
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            color: #7D6E5D;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .tiny-text {
+            font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+            color: #9B8B7E;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #8B7765 0%, #A0826D 50%, #6B5544 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            color: #FFFFFF;
+            box-shadow: 0 10px 30px rgba(59, 47, 38, 0.3);
+        }
+
+        .highlight-box .big-text {
+            color: #FFF8F0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .card {
+            background: linear-gradient(to bottom, #FFFFFF, #F9F6F3);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(107, 85, 68, 0.15);
+            border: 2px solid rgba(139, 119, 101, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 85, 68, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 60px;
+            background: linear-gradient(to top, rgba(107, 85, 68, 0.1), transparent);
+        }
+
+        .decorative-line {
+            height: 3px;
+            background: linear-gradient(to right, transparent, #8B7765, transparent);
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 15px;
+            }
+            
+            .content-section {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bienvenue sur le site de LKMC</h1>
+            <p class="subtitle">La fille qui aime chercher l'argent</p>
+        </header>
+
+        <div class="content-section">
+            <p class="big-text">L'ambition n'a pas de limites</p>
+            <div class="decorative-line"></div>
+            <p class="normal-text">
+                Dans un monde où la réussite se mesure à la détermination, 
+                LKMC incarne la persévérance et l'audace. Chaque opportunité 
+                est une porte vers le succès.
+            </p>
+            <p class="small-text">
+                La passion pour l'excellence financière n'est pas qu'une quête, 
+                c'est un art de vivre, une philosophie qui guide chaque décision.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <p class="big-text">💰 La richesse commence dans l'esprit</p>
+            <p class="medium-text">Avant d'atteindre les poches</p>
+            <p class="normal-text">
+                L'argent n'est qu'un outil. La vraie richesse réside dans la 
+                capacité à le créer, le multiplier et le faire fructifier.
+            </p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <p class="medium-text">Vision</p>
+                <p class="small-text">
+                    Voir au-delà de l'horizon, anticiper les opportunités 
+                    avant qu'elles ne deviennent évidentes pour tous.
+                </p>
+                <p class="tiny-text">
+                    La prévoyance est la clé du succès financier durable.
+                </p>
+            </div>
+
+            <div class="card">
+                <p class="medium-text">Action</p>
+                <p class="small-text">
+                    Les rêves sans action restent des rêves. Chaque pas compte, 
+                    chaque décision forge l'avenir.
+                </p>
+                <p class="tiny-text">
+                    L'audace récompense ceux qui osent agir.
+                </p>
+            </div>
+
+            <div class="card">
+                <p class="medium-text">Prospérité</p>
+                <p class="small-text">
+                    Le résultat d'un travail acharné, d'une stratégie affûtée 
+                    et d'une détermination sans faille.
+                </p>
+                <p class="tiny-text">
+                    La réussite est un voyage, pas une destination.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <p class="big-text">Chaque jour est une nouvelle chance</p>
+            <p class="normal-text">
+                De transformer les défis en opportunités, les obstacles en tremplins, 
+                et les rêves en réalité tangible.
+            </p>
+            <div class="decorative-line"></div>
+            <p class="medium-text">L'argent aime ceux qui le respectent</p>
+            <p class="small-text">
+                Il fuit ceux qui le méprisent, se multiplie entre les mains 
+                de ceux qui savent le faire travailler.
+            </p>
+            <p class="tiny-text">
+                LKMC - Où la passion rencontre la prospérité.
+            </p>
+        </div>
+
+        <footer>
+            <p class="normal-text" style="color: #6B5544;">✨ LKMC ✨</p>
+            <p class="small-text">La quête continue, l'ambition persiste</p>
+            <p class="tiny-text" style="margin-top: 20px;">© 2025 - Tous droits réservés</p>
+        </footer>
+    </div>
+</body>
+</html>
