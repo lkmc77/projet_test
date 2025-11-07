@@ -6,7 +6,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'IMAGE_NAME', defaultValue: 'alpinehelloworld', description: 'Nom image')
+        string(name: 'IMAGE_NAME', defaultValue: 'webapp', description: 'Nom image')
         string(name: 'IMAGE_TAG', defaultValue: 'latest', description: 'Tag image')
     }
 
