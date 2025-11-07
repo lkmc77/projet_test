@@ -71,3 +71,4 @@ EOF
         failure { slackSend color: 'danger', message: 'Pipeline *ÉCHEC* — Vérifie les logs Jenkins' }
     }
 }
+}
