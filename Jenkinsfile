@@ -50,19 +50,20 @@ EOF
         }
 
         stage('Deploy') {
-            steps {
-                slackSend color: '#439FE0', message: 'Début du stage *Deploy*'
-                script {
-                    def IMAGE = "${params.IMAGE_NAME}:${params.IMAGE_TAG}"
-                    sh """
-                    docker rm -f webapp-container || true
-                    docker run -d --name webapp-container -p 8081:80 ${IMAGE}
-                    sleep 5
-                    """
-                }
-                slackSend color: 'good', message: 'Stage *Deploy* terminé → [http://localhost:8081](http://localhost:8081)'
-            }
+      steps {
+        slackSend color: '#439FE0', message: 'Début du stage *Deploy*'
+        script {
+            def IMAGE = "$$ {params.IMAGE_NAME}: $${params.IMAGE_TAG}"
+            sh """
+            docker rm -f webapp-container || true
+            docker stop webapp-container || true
+            docker run -d --name webapp-container -p 8082:80 ${IMAGE} || true
+            sleep 5
+            """
         }
+        slackSend color: 'good', message: 'Stage *Deploy* terminé → http://localhost:8082'
+    }
+}
     }
 
     post {
