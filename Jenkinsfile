@@ -50,10 +50,10 @@ EOF
         }
 
         stage('Deploy') {
-      steps {
+    steps {
         slackSend color: '#439FE0', message: 'Début du stage *Deploy*'
         script {
-            def IMAGE = "$$ {params.IMAGE_NAME}: $${params.IMAGE_TAG}"
+            def IMAGE = "${params.IMAGE_NAME}:${params.IMAGE_TAG}"
             sh """
             docker rm -f webapp-container || true
             docker stop webapp-container || true
@@ -64,7 +64,7 @@ EOF
         slackSend color: 'good', message: 'Stage *Deploy* terminé → http://localhost:8082'
     }
 }
-    }
+    
 
     post {
         success { slackSend color: 'good', message: 'Pipeline CI/CD *SUCCÈS* !' }
